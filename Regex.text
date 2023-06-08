@@ -1,5 +1,3 @@
 <stringtable>
   <ID name="Self_ToolTip">Simulate key-press events. Including Gamepad/Controller events.</ID>
-  <ID name="Duration_ToolTip">How long to hold key(s) down for.</ID>
-  <ID name="Press_ToolTip">Simulate pressing all keys simultaniously for the duration specified.</ID>
 </stringtable>
