@@ -1,3 +1,12 @@
 <stringtable>
-  <ID name="Self_ToolTip">Simulate key-press events. Including Gamepad/Controller events.</ID>
+  <ID name="Self_ToolTip">Performs Regular Expression operations on text</ID>
+  <ID name="Text_ToolTip">The text to perform the Regex operation on</ID>
+  <ID name="Operation_ToolTip">The Regex Operation to perform. Find alerts for only the first occurrence of expression. Findall will alert for every occurrence but wait between occurrences for the the time specified in seconds by "Result Interval". Sub will replace occurrences of Expression in Text with the value in Substitution.</ID>
+  <ID name="Options_Expression_ToolTip">The expression to match in Text.</ID>
+  <ID name="Options_Substitution_ToolTip">The Substitution to replace occurrence of expression in Text with</ID>
+  <ID name="Options_ResultInterval_ToolTip">The interval in seconds to wait between results.</ID>
+  <ID name="Run_ToolTip">Performs the regular expression.</ID>
+  <ID name="onResult_ToolTip">Alerts the original text, the resulting text from performing the regex and the occurrence number of the result (out of the total occurrences)</ID>
+  <ID name="onResultCount_ToolTip">Alerts the total number of occurrences found in Text</ID>
+  <ID name="onNoResult_ToolTip">Alerts if there are no matches found.</ID>
 </stringtable>

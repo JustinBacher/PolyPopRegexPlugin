@@ -5,7 +5,7 @@ Instance.properties = properties({
     {name="Options", type="PropertyGroup", items={
         {name="Expression", type="Text"},
         {name="Substitution", type="Text", ui={visible=false}},
-        {name="Interval", type="Real", units="Seconds", value=1, range={min=0}, ui={easing=5, step=0.1}},
+        {name="ResultInterval", type="Real", units="Seconds", value=1, range={min=0}, ui={easing=5, step=0.1}},
     }, ui={expand=true}},
     {name="Run", type="Action"},
     {name="onResult", type="Alert", args={
@@ -15,6 +15,7 @@ Instance.properties = properties({
     }},
     {name="onResultCount", type="Alert", args={count="[count]"}},
     {name="onNoResult", type="Alert"},
+    {name="Info", type="Action"},
 })
 
 function Instance:sendMatch(match, num)
@@ -45,7 +46,7 @@ function Instance:sendTimedMatch(getNextMatch, num)
         getAnimator():createTimer(
             self,
             function() self:sendTimedMatch(getNextMatch, num + 1) end,
-            Seconds(self.properties.Options.Interval),
+            Seconds(self.properties.Options.ResultInterval),
         )
     end
 end
@@ -93,7 +94,7 @@ end
 function Instance:onOperationUpdate()
     local op = self.properties.Operation
     getUI():setUIProperty({{obj=self.properties.Options:find("Substitution"), visible=op == "Sub"}})
-    getUI():setUIProperty({{obj=self.properties.Options:find("WordInterval"), visible=op == "Findall"}})
+    getUI():setUIProperty({{obj=self.properties.Options:find("ResultInterval"), visible=op == "Findall"}})
 end
 
 function Instance:Run()
@@ -102,4 +103,8 @@ function Instance:Run()
     if op then
         op(self)
     end
+end
+
+function Instance:Info()
+    -- Show popup of how to use
 end
